@@ -1,0 +1,579 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/crudmongo": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "get all data cruds collection mongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success",
+                                        "data": {
+                                            "_id": "616fd827e13d983f1e097632",
+                                            "namalengkap": "Muhamad Yasin",
+                                            "alamat": "Baros",
+                                            "username": "myasin",
+                                            "password": "$2y$10$Zv3Cf198tULszZGHJcWeduTxh5G7e0yp85l7.5bHYH/AksYSI7vTu",
+                                            "updated_at": "2021-10-20T08:49:43.505000Z",
+                                            "created_at": "2021-10-20T08:49:43.505000Z"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed get all data cruds collection mongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/crudmongo/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get data cruds filter by id collection mongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success",
+                                        "data": {
+                                            "_id": "616fd827e13d983f1e097632",
+                                            "namalengkap": "Muhamad Yasin",
+                                            "alamat": "Baros",
+                                            "username": "myasin",
+                                            "password": "$2y$10$Zv3Cf198tULszZGHJcWeduTxh5G7e0yp85l7.5bHYH/AksYSI7vTu",
+                                            "updated_at": "2021-10-20T08:49:43.505000Z",
+                                            "created_at": "2021-10-20T08:49:43.505000Z"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed filter by id cruds collection mongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/crudmongo/add": {
+            "post": {
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "namalengkap": {
+                                        "description": "User Full Name",
+                                        "type": "string",
+                                        "example": "defitra M yasin"
+                                    },
+                                    "alamat": {
+                                        "description": "User Address",
+                                        "type": "string",
+                                        "example": "sukabumi, indonesia"
+                                    },
+                                    "username": {
+                                        "description": "Username",
+                                        "type": "string",
+                                        "example": "admin"
+                                    },
+                                    "password": {
+                                        "description": "User Password",
+                                        "type": "string",
+                                        "example": "admin password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "insert data to cruds collections MongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed insert data to cruds collections MongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/crudmongo/update/{id}": {
+            "put": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "namalengkap": {
+                                        "description": "User Full Name",
+                                        "type": "string",
+                                        "example": "defitra M yasin"
+                                    },
+                                    "alamat": {
+                                        "description": "User Address",
+                                        "type": "string",
+                                        "example": "sukabumi, indonesia"
+                                    },
+                                    "username": {
+                                        "description": "Username",
+                                        "type": "string",
+                                        "example": "admin"
+                                    },
+                                    "password": {
+                                        "description": "User Password",
+                                        "type": "string",
+                                        "example": "admin password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "update data to cruds collections MongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed update data to cruds collections MongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/crudmongo/delete/{id}": {
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete data cruds by id collection mongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed delete data cruds collection mongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "username": {
+                                        "description": "Username",
+                                        "type": "string",
+                                        "example": "admin"
+                                    },
+                                    "password": {
+                                        "description": "User Password",
+                                        "type": "string",
+                                        "example": "admin password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "login to cruds collections MongoDB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success",
+                                        "token": "token value",
+                                        "data": {
+                                            "_id": "616fd827e13d983f1e097632",
+                                            "namalengkap": "Muhamad Yasin",
+                                            "alamat": "Baros",
+                                            "username": "myasin",
+                                            "password": "$2y$10$Zv3Cf198tULszZGHJcWeduTxh5G7e0yp85l7.5bHYH/AksYSI7vTu",
+                                            "updated_at": "2021-10-20T08:49:43.505000Z",
+                                            "created_at": "2021-10-20T08:49:43.505000Z"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "user does not exist",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "user does not exist"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "logout and remove token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "logout and destroy token success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed logout",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/firebase": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "get all data firebase DB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success",
+                                        "data": {
+                                            "-MmQjB0LQ8pJWqI7bfnN": {
+                                                "alamat": "smi",
+                                                "namalengkap": "M yasin"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed get all data firebase DB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/firebase/by_id/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get data firebase DB filter by id ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success",
+                                        "data": {
+                                            "alamat": "smi",
+                                            "namalengkap": "M yasin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed firebase DB filter by id ",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/firebase/add": {
+            "post": {
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "namalengkap": {
+                                        "description": "User Full Name",
+                                        "type": "string",
+                                        "example": "defitra M yasin"
+                                    },
+                                    "alamat": {
+                                        "description": "User Address",
+                                        "type": "string",
+                                        "example": "sukabumi, indonesia"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "insert data to firebase DB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed insert data to firebase DB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/firebase/update/{id}": {
+            "put": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "namalengkap": {
+                                        "description": "User Full Name",
+                                        "type": "string",
+                                        "example": "defitra M yasin"
+                                    },
+                                    "alamat": {
+                                        "description": "User Address",
+                                        "type": "string",
+                                        "example": "sukabumi, indonesia"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "update data to firebase DB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed update data to firebase DB",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/firebase/delete/{id}": {
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "delete data firebase DB by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "success"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "failed delete data firebase DB by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "example": {
+                                        "message": "value message error Throwable"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

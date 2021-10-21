@@ -1,0 +1,17 @@
+location answer 
+
+running : php -S localhost:8080 -t ./public
+
+1. mvc CrudController
+2. CrudController
+3. FirebaseKey.json , .env configuration , CrudController
+4. Dockerfile , images directory
+5. tests directory ApiTest Class
+6. CrudController
+7. CrudController
+8. Exception Handler file, intergration on CrudController
+9. php -S localhost:8080 public/index.php run on terminal and access to http://localhost:8080/api/documentation
+
+login test :
+username : myasin
+password : myasin
